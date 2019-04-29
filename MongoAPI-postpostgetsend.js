@@ -2,7 +2,7 @@ var Request = require("request-promise");
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-var mongoURL = "https://mongoserver-tenacious-sputum.eu-gb.mybluemix.net/api/Images"; // restApiRoot (/api), localhost and port from config.json (talentimage/Mongodb/ServerMongoFoto/server/)
+var mongoURL = "https://mongoserver-optimistic-crane.eu-gb.mybluemix.net/api/Images"; // restApiRoot (/api), localhost and port from config.json (talentimage/Mongodb/ServerMongoFoto/server/)
 var serverPort = process.env.PORT || 4000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +18,7 @@ function MaakderWatMooisVan(ObjectMongoCount, Class, error) {
     })
     Response.Count = newBody.length;
 }
-
+//kijken of het werkt
 async function Controller(Obj, Class, res) {
     let Inputresult = await Request.post({
         "headers": { "content-type": "application/json" },
@@ -36,7 +36,6 @@ async function Controller(Obj, Class, res) {
     await res.send(JSON.stringify(Response));
 }
 
-//incoming request from processAPI at /post endpoint:
 app.post('/post', function (req, res) {
     var mongo = req.body;
     var mongoclass = req.body.class
