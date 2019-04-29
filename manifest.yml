@@ -2,5 +2,5 @@
 applications:
  - name: MongoAPIv2
    routes:
-   -route: sad-pinguin.eu-gb.mybluemix.net
+   - route: sad-pinguin.eu-gb.mybluemix.net
    memory: 256M
